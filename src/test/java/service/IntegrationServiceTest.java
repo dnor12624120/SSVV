@@ -52,12 +52,6 @@ class IntegrationServiceTest {
     void BigBang_addNota_Valid() {
         Service service = instantiateService();
 
-        Student student = new Student("1", "Firstname Lastname", 911, "firstnamelastname@gmail.com");
-        service.addStudent(student);
-
-        Tema tema = new Tema("1", "description", 1, 2);
-        service.addTema(tema);
-
         Nota nota = new Nota("1", "1", "1", 5, LocalDate.of(2020, 10, 10));
         service.addNota(nota, "feedback");
         assert(nota.equals(service.findNota(nota.getID())));
