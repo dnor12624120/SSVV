@@ -34,12 +34,6 @@ public abstract class AbstractCrudRepository <ID, E extends HasID<ID>> implement
         return this.elemente.values();
     }
 
-    /**
-     * Salveaza un obiect in memorie
-     * @param entity - obiectul pe care il salveaza
-     * entity must be not null
-     * @return null daca obiectul a fost salvat sau obiectul daca acesta exista deja
-     */
     @Override
     public E save(E entity) {
         E el = this.findOne(entity.getID());           // 13
@@ -47,8 +41,7 @@ public abstract class AbstractCrudRepository <ID, E extends HasID<ID>> implement
             this.elemente.put(entity.getID(), entity); // 15
             return null;
         }
-        else return entity;                            // 16
-
+        return entity;
     }
 
     /**

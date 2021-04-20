@@ -89,8 +89,9 @@ public abstract class AbstractXMLRepository<ID, E extends HasID<ID>> extends Abs
        E entity1 = super.save(entity);        // 12
        if (entity1 == null) {                 // 17
            writeToFile();                     // 18
+           return entity1;                       // 19
        }
-        return entity1;                       // 19
+        throw new RuntimeException("Entity already exists!");
    }
     /**
      * Rescrie fisierul cu toate obiectele din memorie
