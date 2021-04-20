@@ -6,11 +6,11 @@ import repository.StudentXMLRepo;
 import validation.StudentValidator;
 
 class ServiceTest {
-    private StudentXMLRepo instantiateStudentRepository() { return new StudentXMLRepo("students.xml"); }
-    private StudentValidator instantiateStudentValidator() { return new StudentValidator(); }
-    private Service instantiateService() { return new Service(instantiateStudentRepository(),
-                                                              instantiateStudentValidator(),
-                                                              null, null, null, null); }
+        private StudentXMLRepo instantiateStudentRepository() { return new StudentXMLRepo("students.xml"); }
+        private StudentValidator instantiateStudentValidator() { return new StudentValidator(); }
+        private Service instantiateService() { return new Service(instantiateStudentRepository(),
+                                                                  instantiateStudentValidator(),
+                                                                  null, null, null, null); }
 
     @Test
     void TC1_AddStudent_Valid() {

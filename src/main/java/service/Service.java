@@ -58,8 +58,8 @@ public class Service {
      * @return null daca studentul a fost adaugat cu succes sau studentul din memorie daca acesta exista deja
      */
     public Student addStudent(Student student) {
-        studentValidator.validate(student);
-        return studentFileRepository.save(student);
+        studentValidator.validate(student); // 1
+        return studentFileRepository.save(student); // 17
     }
 
     /**
@@ -109,8 +109,8 @@ public class Service {
      * @return null daca s-a facut adaugarea sau tema daca aceasta exista deja
      */
     public Tema addTema(Tema tema){
-        temaValidator.validate(tema);
-        return temaFileRepository.save(tema);
+        temaValidator.validate(tema);         // 1
+        return temaFileRepository.save(tema); // 11
     }
 
     /**
